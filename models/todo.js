@@ -5,8 +5,15 @@ const todos = [
 ];
 
 module.exports = {
-  getAll
+  getAll,
+  getOne
 };
+
+function getOne(id) {
+  // URL params are strings
+  id = parseInt(id);
+  return todos.find(todo => todo.id === id);
+}
 
 function getAll() {
   return todos;
